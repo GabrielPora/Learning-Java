@@ -1,5 +1,8 @@
 package calculator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Calculator {
     public int add(String inputNumbers) {
         int sum = 0;
@@ -13,7 +16,17 @@ public class Calculator {
     }
 
     public String[] extractNumberIntoArray(String inputNumbersString) {
-        String[] textNumbers = inputNumbersString.split(",|\n");
+        String[] textNumbers;
+        if (inputNumbersString.startsWith("//")) {
+            Matcher matchTextNumbers = Pattern.compile("//(.)\n(.*)").matcher(inputNumbersString);
+            matchTextNumbers.find();
+
+            String customDelimiter = matchTextNumbers.group(1);
+            textNumbers = matchTextNumbers.group(2).split(customDelimiter);
+        }
+        else {
+            textNumbers = inputNumbersString.split(",|\n");
+        }
         return textNumbers;
     }
 
