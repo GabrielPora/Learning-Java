@@ -13,4 +13,14 @@ public class CalculatorTest {
         Assert.assertEquals(CALCULATOR.add(""), 0);
     }
 
+    @Test
+    public void calculator_testOnlyOneNumber_returnNumber() {
+        Assert.assertEquals(CALCULATOR.add("1"), 1);
+    }
+
+    @Test
+    public void calculator_testTwoNumbersSeperatedByComma() {
+        Assert.assertEquals(CALCULATOR.add("1,2"), 3);
+    }
+
 }
