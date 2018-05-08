@@ -13,7 +13,7 @@ public class Calculator {
     }
 
     public String[] extractNumberIntoArray(String inputNumbersString) {
-        String[] textNumbers = inputNumbersString.split(",");
+        String[] textNumbers = inputNumbersString.split(",|\n");
         return textNumbers;
     }
 

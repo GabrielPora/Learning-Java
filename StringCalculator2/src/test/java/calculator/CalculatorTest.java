@@ -28,4 +28,9 @@ public class CalculatorTest {
         Assert.assertEquals(CALCULATOR.add("1,2,3"), 6);
     }
 
+    @Test
+    public void calculator_testAddWithNewlineSeperator() {
+        Assert.assertEquals(CALCULATOR.add("1\n2,3"), 6);
+    }
+
 }
