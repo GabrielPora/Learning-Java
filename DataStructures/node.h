@@ -1,5 +1,10 @@
+#ifndef NODE_H
+# define NODE_H
+
 struct Node
 {
-    int data;
+    int value;
     struct Node *next;
 };
+
+#endif

@@ -1,13 +1,13 @@
 
-public class LinkedList {
+class LinkedList {
     public Node head;
 
-    public void LinkedList (int item) {
+    public LinkedList (int item) {
         head = new Node(item);
     }
 
     public void prepend (int value) {
-        Node newHead = new Node(value)
+        Node newHead = new Node(value);
         newHead.next = head;
         head = newHead;
     }
@@ -22,9 +22,19 @@ public class LinkedList {
         }
         return i;
     }
+
+     public void printList()
+    {
+        Node n = head;
+        while (n != null)
+        {
+            System.out.print(n.value+" ");
+            n = n.next;
+        }
+    }
 }
 
-public class Node {
+class Node {
     public Node next;
     public int value;
 
@@ -38,6 +48,7 @@ public class Main {
         LinkedList list = new LinkedList(10);
         list.prepend(5);
         list.prepend(21);
-        System.out.println("what are int the nodes "+list.LinkedList()+ " number of nodes " + list.size());
+        list.printList();
+        System.out.println("what are int the nodes  number of nodes " + list.size());
     }
 }
