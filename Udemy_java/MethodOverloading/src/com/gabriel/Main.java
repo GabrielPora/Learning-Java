@@ -11,8 +11,9 @@ public class Main {
         System.out.println(calcFeetAndInchesToCentimeters(5,9)+ "cm");
         System.out.println(calcFeetAndInchesToCentimeters(0,0));
         System.out.println(calcFeetAndInchesToCentimeters(50));
-        System.out.println(calcFeetAndInchesToCentimeters(47));
-        System.out.println(calcFeetAndInchesToCentimeters(100));
+        System.out.println(calcFeetAndInchesToCentimeters(47f));
+        System.out.println(calcFeetAndInchesToCentimeters(100d));
+        System.out.println(calcFeetAndInchesToCentimeters(100f));
     }
 
     public static int calculateScore(String playerName, int score) {
@@ -47,17 +48,25 @@ public class Main {
         return  calcFeetAndInchesToCentimeters(feet,  remainderInches);
     }
 
-//    public static double calcFeetAndInchesToCentimeters(double inches) {
-//        if (inches < 0) {
-//            return -1;
-//        }
-//        double remainderInches = inches % 12d;
-//        int wholeNumber = (int)inches / 12;
-//        if (remainderInches > 10){
-//            remainderInches= remainderInches/10;
-//        }
-//        remainderInches= remainderInches/10;
-//        double answer = wholeNumber+remainderInches;
-//        return  answer;
-//    }
+//    This works as we can still use the same method name but change our type and it will work
+//    This is possible with System.out.println(); as it uses method overloading too
+//        System.out.println("Hello");
+//        System.out.println(5);
+//        System.out.println(10.5);
+//    It is able to handle the different types. 
+
+
+    public static float calcFeetAndInchesToCentimeters(float inches) {
+        if (inches < 0) {
+            return -1;
+        }
+        float remainderInches = inches % 12;
+        int wholeNumber = (int)inches / 12;
+        if (remainderInches > 10){
+            remainderInches= remainderInches/10;
+        }
+        remainderInches= remainderInches/10;
+        float answer = wholeNumber+remainderInches;
+        return  answer;
+    }
 }
