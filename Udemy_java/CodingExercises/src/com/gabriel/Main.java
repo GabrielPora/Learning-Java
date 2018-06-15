@@ -11,6 +11,8 @@ import static com.gabriel.AreaCalculator.area;
 import static com.gabriel.MinutesToYearsDaysCalculator.printYearsAndDays;
 import static com.gabriel.IntEqualityPrinter.printEqual;
 import static com.gabriel.PlayingCat.isCatPlaying;
+import static com.gabriel.NumberInWord.printNumberInWord;
+import static com.gabriel.NumberOfDaysInMonth.getDaysInMonth;
 
 public class Main {
 
@@ -79,5 +81,28 @@ public class Main {
         System.out.println(isCatPlaying(false, 36));
         System.out.println(isCatPlaying(false, 35));
         System.out.println(isCatPlaying(true, 45));
+
+        System.out.println("\nNumberInWord");
+        printNumberInWord(0);
+        printNumberInWord(1);
+        printNumberInWord(2);
+        printNumberInWord(3);
+        printNumberInWord(4);
+        printNumberInWord(5);
+        printNumberInWord(6);
+        printNumberInWord(7);
+        printNumberInWord(8);
+        printNumberInWord(9);
+        printNumberInWord(-8);
+        printNumberInWord(10);
+
+
+        System.out.println("\nEqualSumChecker");
+        System.out.println(getDaysInMonth(1, 2020));
+        System.out.println(getDaysInMonth(2, 2020));
+        System.out.println(getDaysInMonth(2, 2018));
+        System.out.println(getDaysInMonth(-1, 2020));
+        System.out.println(getDaysInMonth(1, -2020));
+
     }
 }
