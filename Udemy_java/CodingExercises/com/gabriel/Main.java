@@ -13,6 +13,8 @@ import static com.gabriel.IntEqualityPrinter.printEqual;
 import static com.gabriel.PlayingCat.isCatPlaying;
 import static com.gabriel.NumberInWord.printNumberInWord;
 import static com.gabriel.NumberOfDaysInMonth.getDaysInMonth;
+import static com.gabriel.Sum3And5Challenge.Sum3And5;
+import static src.com.gabriel.SumOddRange.sumOdd;
 
 public class Main {
 
@@ -104,5 +106,14 @@ public class Main {
         System.out.println(getDaysInMonth(-1, 2020));
         System.out.println(getDaysInMonth(1, -2020));
 
+        System.out.println("\nSum3And5Challenge");
+        Sum3And5();
+
+        System.out.println("\nSumOddRange");
+        System.out.println(sumOdd(1, 100));
+        System.out.println(sumOdd(-1, 100));
+        System.out.println(sumOdd(100, 100));
+        System.out.println(sumOdd(1, -100));
+        System.out.println(sumOdd(100, 1000));
     }
 }
