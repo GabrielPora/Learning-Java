@@ -15,6 +15,15 @@ import static com.gabriel.NumberInWord.printNumberInWord;
 import static com.gabriel.NumberOfDaysInMonth.getDaysInMonth;
 import static com.gabriel.Sum3And5Challenge.Sum3And5;
 import static src.com.gabriel.SumOddRange.sumOdd;
+import static src.com.gabriel.NumberPalindrome.isPalindrome;
+import static src.com.gabriel.FirstLastDigitSum.sumFirstAndLastDigit;
+import static src.com.gabriel.EvenDigitSum.getEvenDigitSum;
+import static src.com.gabriel.SharedDigit.hasSharedDigit;
+import static src.com.gabriel.LastDigitChecker.hasSameLastDigit;
+import static src.com.gabriel.GreatestCommonDivisor.getGreatestCommonDivisor;
+import static src.com.gabriel.FactorPrinter.printFactors;
+import static src.com.gabriel.PerfectNumber.isPerfectNumber;
+import static src.com.gabriel.NumberToWords.numberToWords;
 
 public class Main {
 
@@ -98,7 +107,6 @@ public class Main {
         printNumberInWord(-8);
         printNumberInWord(10);
 
-
         System.out.println("\nEqualSumChecker");
         System.out.println(getDaysInMonth(1, 2020));
         System.out.println(getDaysInMonth(2, 2020));
@@ -115,5 +123,70 @@ public class Main {
         System.out.println(sumOdd(100, 100));
         System.out.println(sumOdd(1, -100));
         System.out.println(sumOdd(100, 1000));
+
+        System.out.println("\nNumberPalindrome");
+        System.out.println(isPalindrome(100));
+        System.out.println(isPalindrome(101));
+        System.out.println(isPalindrome(123));
+        System.out.println(isPalindrome(-1221));
+        System.out.println(isPalindrome(707));
+        System.out.println(isPalindrome(11212));
+
+        System.out.println("\nFirstLastDigitSum");
+        System.out.println(sumFirstAndLastDigit(252));
+        System.out.println(sumFirstAndLastDigit(257));
+        System.out.println(sumFirstAndLastDigit(5));
+        System.out.println(sumFirstAndLastDigit(-10));
+
+        System.out.println("\nEvenDigitSum");
+        System.out.println(getEvenDigitSum(252));
+        System.out.println(getEvenDigitSum(257));
+        System.out.println(getEvenDigitSum(5));
+        System.out.println(getEvenDigitSum(-10));
+        System.out.println(getEvenDigitSum(123456789));
+
+        System.out.println("\nSharedDigit");
+        System.out.println(hasSharedDigit(12, 23));
+        System.out.println(hasSharedDigit(-1, 100));
+        System.out.println(hasSharedDigit(9, 99));
+        System.out.println(hasSharedDigit(15, -10));
+        System.out.println(hasSharedDigit(15, 55));
+
+        System.out.println("\nLastDigitChecker");
+        System.out.println(hasSameLastDigit(12, 23,32));
+        System.out.println(hasSameLastDigit(-1, 100,10));
+        System.out.println(hasSameLastDigit(99, 99,9));
+        System.out.println(hasSameLastDigit(15, -10,51));
+        System.out.println(hasSameLastDigit(15, 55,45));
+
+        System.out.println("\nGreatestCommonDivisor");
+        System.out.println(getGreatestCommonDivisor(12, 30));
+        System.out.println(getGreatestCommonDivisor(-1, 100));
+        System.out.println(getGreatestCommonDivisor(19, 99));
+        System.out.println(getGreatestCommonDivisor(15, -10));
+        System.out.println(getGreatestCommonDivisor(45, 15));
+
+        System.out.println("\nFactorPrinter");
+        printFactors(6);
+        printFactors(32);
+        printFactors(10);
+        printFactors(252);
+        printFactors(257);
+        printFactors(5);
+        printFactors(-10);
+
+        System.out.println("\nPerfectNumber");
+        System.out.println(isPerfectNumber(6));
+        System.out.println(isPerfectNumber(28));
+        System.out.println(isPerfectNumber(5));
+        System.out.println(isPerfectNumber(-1));
+
+        System.out.println("\nNumberToWords");
+        numberToWords(6);
+        numberToWords(28);
+        numberToWords(5);
+        numberToWords(-1);
+        numberToWords(10);
+        numberToWords(1000);
     }
 }
