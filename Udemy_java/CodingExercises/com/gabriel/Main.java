@@ -24,6 +24,8 @@ import static src.com.gabriel.GreatestCommonDivisor.getGreatestCommonDivisor;
 import static src.com.gabriel.FactorPrinter.printFactors;
 import static src.com.gabriel.PerfectNumber.isPerfectNumber;
 import static src.com.gabriel.NumberToWords.numberToWords;
+import static src.com.gabriel.FlourPacker.canPack;
+import static src.com.gabriel.LargestPrime.getLargestPrime;
 
 public class Main {
 
@@ -188,5 +190,20 @@ public class Main {
         numberToWords(-1);
         numberToWords(10);
         numberToWords(1000);
+
+        System.out.println("\nFlourPacker");
+        System.out.println(canPack(1, 0,4));
+        System.out.println(canPack(1, 0,5));
+        System.out.println(canPack(0, 5,4));
+        System.out.println(canPack(2, 2,12));
+        System.out.println(canPack(-3, 2,12));
+
+        System.out.println("\nLargestPrime");
+        System.out.println(getLargestPrime(7));
+        System.out.println(getLargestPrime(21));
+        System.out.println(getLargestPrime(217));
+        System.out.println(getLargestPrime(31));
+        System.out.println(getLargestPrime(45));
+        System.out.println(getLargestPrime(-1));
     }
 }
