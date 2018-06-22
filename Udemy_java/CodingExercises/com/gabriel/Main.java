@@ -26,6 +26,7 @@ import static src.com.gabriel.PerfectNumber.isPerfectNumber;
 import static src.com.gabriel.NumberToWords.numberToWords;
 import static src.com.gabriel.FlourPacker.canPack;
 import static src.com.gabriel.LargestPrime.getLargestPrime;
+import static src.com.gabriel.DiagonalStar.printSquareStar;
 
 public class Main {
 
@@ -205,5 +206,14 @@ public class Main {
         System.out.println(getLargestPrime(31));
         System.out.println(getLargestPrime(45));
         System.out.println(getLargestPrime(-1));
+
+        System.out.println("\nDiagonalStar");
+        printSquareStar(-5);
+        printSquareStar(5);
+        printSquareStar(8);
+        printSquareStar(-5);
+//        printSquareStar(31);
+//        printSquareStar(45);
+//        printSquareStar(-1);
     }
 }
