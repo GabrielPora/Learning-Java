@@ -3,8 +3,11 @@ package com.gabriel;
 import java.util.*;
 
 public class Main {
-
-    private static ArrayList<Album> albums = new ArrayList<Album>();
+    // note Vector is a type of list and there are many other types of lists.
+    // ArrayList
+    // LinkedList
+    // these are all interfaces and we can see this as we can change the LinkedList to a List and it still works fine.
+    private static List<Album> albums = new ArrayList<Album>();
 
     public static void main(String[] args) {
         Album album = new Album("Stormbringer", "Deep Purple");
@@ -31,7 +34,7 @@ public class Main {
         album.addSong("Night of the long knives", 5.12);
         albums.add(album);
 
-        LinkedList<Song> playList = new LinkedList<Song>();
+        List<Song> playList = new ArrayList<Song>();
         albums.get(0).addToPlayList("You can't do it right", playList);
         albums.get(0).addToPlayList("Holy man", playList);
         albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
@@ -45,7 +48,7 @@ public class Main {
 
     }
 
-    private static void play(LinkedList<Song> playlist) {
+    private static void play(List<Song> playlist) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean directionForward = true;
@@ -130,7 +133,7 @@ public class Main {
         }
     }
 
-    private static void printList(LinkedList<Song> playlist) {
+    private static void printList(List<Song> playlist) {
         Iterator<Song> songIterator = playlist.iterator();
         System.out.println("==============================");
         while (songIterator.hasNext()) {
