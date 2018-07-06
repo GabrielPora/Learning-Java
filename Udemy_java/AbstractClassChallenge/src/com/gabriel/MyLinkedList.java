@@ -93,6 +93,5 @@ public class MyLinkedList implements NodeList {
                 root = root.next();
             }
         }
-
     }
 }
