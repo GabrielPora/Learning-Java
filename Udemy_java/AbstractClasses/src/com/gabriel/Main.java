@@ -17,7 +17,7 @@ public class Main {
         parrot.eat();
         parrot.fly();
 
-        Penguin penguin = new Penguin("South Pole");
+        Penguin penguin = new Penguin("Emper");
         penguin.breathe();
         penguin.eat();
         penguin.fly();
