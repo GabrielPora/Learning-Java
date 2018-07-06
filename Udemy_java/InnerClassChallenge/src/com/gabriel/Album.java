@@ -13,7 +13,7 @@ public class Album {
         this.artist = artist;
         this.songs = new SongList();
     }
-    
+
     private class SongList {
         private ArrayList<Song> songs;
 
@@ -62,7 +62,7 @@ public class Album {
     }
 
     public boolean addToPlayList(String title, LinkedList<Song> playList) {
-        Song checkSong = songs.findSong(title);
+        Song checkSong = this.songs.findSong(title);
         if (checkSong != null) {
             playList.add(checkSong);
             return true;
