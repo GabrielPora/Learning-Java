@@ -1,4 +1,4 @@
-package com.example.test;
+package com.gabriel;
 
 public class ScopeCheck {
     public int publicVar = 0;
