@@ -11,7 +11,12 @@ public class Location {
     public Location(int locationID, String description, Map<String, Integer> exits) {
         this.locationID = locationID;
         this.description = description;
-        this.exits = new HashMap<>(exits);
+        // test if not null otherwise it crashes during run time.
+        if (exits != null) {
+            this.exits = new HashMap<>(exits);
+        }else {
+            this.exits = new HashMap<>();
+        }
         this.exits.put("Q", 0);
     }
 

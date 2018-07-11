@@ -19,7 +19,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Map<String, Integer> tempExit = new HashMap<>();
-        locations.put(0, new Location(0, "You are sitting in front of a computer learning Java", tempExit));
+        locations.put(0, new Location(0, "You are sitting in front of a computer learning Java", null)); //this null breaks it
 
         tempExit = new HashMap<>();
         tempExit.put("W", 2);
