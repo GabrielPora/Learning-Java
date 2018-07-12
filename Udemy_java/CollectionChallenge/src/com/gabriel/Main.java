@@ -44,24 +44,24 @@ public class Main {
             System.out.println(s);
         }
 
-        Basket timsBasket = new Basket("Tim");
-        sellItem(timsBasket, "car", 1);
-        System.out.println(timsBasket);
+        Basket gabeBasket = new Basket("Gabe");
+        sellItem(gabeBasket, "car", 1);
+        System.out.println(gabeBasket);
 
-        sellItem(timsBasket, "car", 1);
-        System.out.println(timsBasket);
+        sellItem(gabeBasket, "car", 1);
+        System.out.println(gabeBasket);
 
-        if (sellItem(timsBasket, "car", 1) != 1) {
+        if (sellItem(gabeBasket, "car", 1) != 1) {
             System.out.println("There are no more cars in stock");
         }
 
-        sellItem(timsBasket, "spanner", 5);
-        System.out.println(timsBasket);
+        sellItem(gabeBasket, "spanner", 5);
+        System.out.println(gabeBasket);
 
-        sellItem(timsBasket, "juice", 4);
-        sellItem(timsBasket, "cup", 12);
-        sellItem(timsBasket, "bread", 1);
-        System.out.println(timsBasket);
+        sellItem(gabeBasket, "juice", 4);
+        sellItem(gabeBasket, "cup", 12);
+        sellItem(gabeBasket, "bread", 1);
+        System.out.println(gabeBasket);
 
         System.out.println(stockList);
 
@@ -84,10 +84,29 @@ public class Main {
             System.out.println("We don't sell " + item);
             return 0;
         }
-        if (stockList.sellStock(item, quantity) != 0) {
-            basket.addToBasket(stockItem, quantity);
-            return quantity;
+        if (stockList.reserveStock(item, quantity) != 0) {
+            return basket.addToBasket(stockItem, quantity);
         }
         return 0;
+    }
+
+    public static int removeItem(Basket basket, String item, int quantity) {
+        // retrieve the item from stock list
+        StockItem stockItem = stockList.get(item);
+        if (stockItem == null) {
+            System.out.println("We don't sell " + item);
+            return 0;
+        }
+        if (basket.removeFromBasket(stockItem, quantity) == quantity) {
+            return stockList.unreserveStock(item, quantity);
+        }
+        return 0;
+    }
+
+    public static void checkOut(Basket basket){
+        for (Map.Entry<StockItem,Integer> item: basket.Items().entrySet()){
+            stockList.sellStock(item.getKey().getName(),item.getValue());
+        }
+        basket.clearBasket();
     }
 }
