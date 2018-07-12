@@ -44,31 +44,31 @@ public class Main {
             System.out.println(s);
         }
 
-        Basket gabeBasket = new Basket("Gabe");
-        sellItem(gabeBasket, "car", 1);
-        System.out.println(gabeBasket);
+        Basket timsBasket = new Basket("Tim");
+        sellItem(timsBasket, "car", 1);
+        System.out.println(timsBasket);
 
-        sellItem(gabeBasket, "car", 1);
-        System.out.println(gabeBasket);
+        sellItem(timsBasket, "car", 1);
+        System.out.println(timsBasket);
 
-        if (sellItem(gabeBasket, "car", 1) != 1) {
+        if (sellItem(timsBasket, "car", 1) != 1) {
             System.out.println("There are no more cars in stock");
         }
 
-        sellItem(gabeBasket, "spanner", 5);
-        System.out.println(gabeBasket);
+        sellItem(timsBasket, "spanner", 5);
+        System.out.println(timsBasket);
 
-        sellItem(gabeBasket, "juice", 4);
-        sellItem(gabeBasket, "cup", 12);
-        sellItem(gabeBasket, "bread", 1);
-        System.out.println(gabeBasket);
+        sellItem(timsBasket, "juice", 4);
+        sellItem(timsBasket, "cup", 12);
+        sellItem(timsBasket, "bread", 1);
+        System.out.println(timsBasket);
 
         System.out.println(stockList);
 
 //        temp = new StockItem("pen", 1.12);
 //        stockList.Items().put(temp.getName(), temp);
         stockList.Items().get("car").adjustStock(2000);
-        stockList.Items().get("car").adjustStock(-1000);
+        stockList.get("car").adjustStock(-1000);
         System.out.println(stockList);
         for (Map.Entry<String, Double> price : stockList.PriceList().entrySet()) {
             System.out.println(price.getKey() + " costs " + price.getValue());
